@@ -6,7 +6,7 @@ package com.ensi.ilsi.TechnicalTesting.Domain;
 
 /**
  *
- * @author Toshiba-PC
+ * @author ASUS-PC
  */
 public class Candidate {
 @Id
