@@ -15,7 +15,7 @@ public class CandidateService {
         this.candidateRepository = candidateRepository;
     }
     
-    public Test ViewAffectedTest()
+    public List<TechnicalTest> ViewAffectedTest()
     {
         return Candidate.getTestList()
     }
