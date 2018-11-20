@@ -5,7 +5,7 @@
  */
 package Service;
 
-import Entities.TechnicalTest;
+import Domain.TechnicalTest;
 import Repository.QuestionRepository;
 import Repository.TechnicalTestRepository;
 import java.util.List;
