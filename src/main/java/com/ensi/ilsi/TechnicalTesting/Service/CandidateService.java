@@ -15,6 +15,11 @@ public class CandidateService {
         this.candidateRepository = candidateRepository;
     }
     
+    public Test ViewAffectedTest()
+    {
+        return Candidate.getTestList()
+    }
+    
     
    
 }
