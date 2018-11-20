@@ -5,7 +5,7 @@
  */
 package Web;
 
-import Entities.Question;
+import Domain.Question;
 import Service.QuestionService;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
