@@ -5,7 +5,7 @@
 package com.ensi.ilsi.TechnicalTesting.Service;
 
 import com.ensi.ilsi.TechnicalTesting.Domain.Candidate;
-import com.ensi.ilsi.TechnicalTesting.Domain.Test;
+import com.ensi.ilsi.TechnicalTesting.Domain.TechnicalTest;
 import com.ensi.ilsi.TechnicalTesting.Repository.ManagerRepository;
 import java.util.List;
 import org.springframework.stereotype.Service;
@@ -22,7 +22,7 @@ public class ManagerService {
         this.managerRepository = managerRepository;
     }
     
-    public void testToCandidate(Test t, Candidate c){
+    public void testToCandidate(TechnicalTest t, Candidate c){
         
     }
 }

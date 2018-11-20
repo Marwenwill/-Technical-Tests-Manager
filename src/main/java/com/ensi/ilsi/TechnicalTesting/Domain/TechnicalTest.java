@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Entities;
+package com.ensi.ilsi.TechnicalTesting.Domain;
+
+import com.ensi.ilsi.TechnicalTesting.Domain.Question;
 import java.util.ArrayList;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -18,13 +20,7 @@ import java.util.Objects;
 @Table(name = "technicalTest")
 public class TechnicalTest {
 
-
-    public TechnicalTest(int technicalTestId, String technicalTestDescription, String technicalTestType, ArrayList<Question> questions) {
-        this.technicalTestId = technicalTestId;
-        this.technicalTestDescription = technicalTestDescription;
-        this.technicalTestType = technicalTestType;
-        this.questions = questions;
-    }
+    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @NotNull
@@ -37,7 +33,18 @@ public class TechnicalTest {
     
     @NotNull
     @Column(name = "type", nullable = false)
-    private String technicalTestType;
+    private TestType technicalTestType;
+    
+    public TechnicalTest() {
+    }
+
+
+    public TechnicalTest(int technicalTestId, String technicalTestDescription, TestType technicalTestType, ArrayList<Question> questions) {
+        this.technicalTestId = technicalTestId;
+        this.technicalTestDescription = technicalTestDescription;
+        this.technicalTestType = technicalTestType;
+        this.questions = questions;
+    }
     
     public enum TestType {
     Python, Java, C, SQL
@@ -45,15 +52,7 @@ public class TechnicalTest {
 
     @NotNull
     @OneToMany
-    private ArrayList<Question> questions; 
-    
-  
-    public void addQuestion(Question q){ 
-  questions.add(q); 
- } 
-    public void deleteQuestion(Question q){ 
-  questions.remove(q); 
- } 
+    private ArrayList<Question> questions;
     
     @Override
     public String toString() {

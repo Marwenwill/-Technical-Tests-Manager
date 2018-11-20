@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Domain;
+package com.ensi.ilsi.TechnicalTesting.Domain;
 
 import java.util.Objects;
 import javax.persistence.*;
@@ -53,6 +53,51 @@ private String description;
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public Question() {
+    }
+
+    public Question(int questionId, String question, String description) {
+        this.questionId = questionId;
+        this.question = question;
+        this.description = description;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 61 * hash + this.questionId;
+        hash = 61 * hash + Objects.hashCode(this.question);
+        hash = 61 * hash + Objects.hashCode(this.description);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Question other = (Question) obj;
+        if (this.questionId != other.questionId) {
+            return false;
+        }
+        if (!Objects.equals(this.question, other.question)) {
+            return false;
+        }
+        if (!Objects.equals(this.description, other.description)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Question{" + "questionId=" + questionId + ", question=" + question + ", description=" + description + '}';
+    }
+ 
     
-   
-    public 
+}
+    

@@ -26,12 +26,12 @@ public class Manager {
     
     private Set<Candidate> candidatesList;
     
-    private Set<Test> TestList;
+    private Set<TechnicalTest> TestList;
 
     public Manager() {
     }
 
-    public Manager(int idManger, String firstName, String lastName, Set<Candidate> candidatesList, Set<Test> TestList) {
+    public Manager(int idManger, String firstName, String lastName, Set<Candidate> candidatesList, Set<TechnicalTest> TestList) {
         this.idManger = idManger;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -71,11 +71,11 @@ public class Manager {
         this.candidatesList = candidatesList;
     }
 
-    public Set<Test> getTestList() {
+    public Set<TechnicalTest> getTestList() {
         return TestList;
     }
 
-    public void setTestList(Set<Test> TestList) {
+    public void setTestList(Set<TechnicalTest> TestList) {
         this.TestList = TestList;
     }
 
