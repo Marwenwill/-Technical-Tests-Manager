@@ -15,5 +15,6 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface TechnicalTestRepository extends JpaRepository<TechnicalTest, Long> {
+    public TechnicalTest findById(int id);
 }
 

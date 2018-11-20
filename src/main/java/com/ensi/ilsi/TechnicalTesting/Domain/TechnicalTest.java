@@ -34,6 +34,39 @@ public class TechnicalTest {
     @NotNull
     @Column(name = "type", nullable = false)
     private TestType technicalTestType;
+
+    public int getTechnicalTestId() {
+        return technicalTestId;
+    }
+
+    public void setTechnicalTestId(int technicalTestId) {
+        this.technicalTestId = technicalTestId;
+    }
+
+    public String getTechnicalTestDescription() {
+        return technicalTestDescription;
+    }
+
+    public void setTechnicalTestDescription(String technicalTestDescription) {
+        this.technicalTestDescription = technicalTestDescription;
+    }
+
+    public TestType getTechnicalTestType() {
+        return technicalTestType;
+    }
+
+    public void setTechnicalTestType(TestType technicalTestType) {
+        this.technicalTestType = technicalTestType;
+    }
+
+    public ArrayList<Question> getQuestions() {
+        return questions;
+    }
+
+    public void setQuestions(ArrayList<Question> questions) {
+        this.questions = questions;
+    }
+    
     
     public TechnicalTest() {
     }

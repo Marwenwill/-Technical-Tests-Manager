@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Service;
+package com.ensi.ilsi.TechnicalTesting.Service;
 
-import Domain.TechnicalTest;
-import Repository.QuestionRepository;
-import Repository.TechnicalTestRepository;
+import com.ensi.ilsi.TechnicalTesting.Domain.TechnicalTest;
+import com.ensi.ilsi.TechnicalTesting.Repository.QuestionRepository;
+import com.ensi.ilsi.TechnicalTesting.Repository.TechnicalTestRepository;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.slf4j.Logger;
@@ -34,28 +34,25 @@ public class TechnicalTestService {
     }
      public List<TechnicalTest> findAll() {
         log.debug("Request to get all Technical Tests");
-        return this.technicalTestRepository.findAll()
-                .stream()
-                .map(TechnicalTestService::map)
-                .collect(Collectors.toList());
+        return this.technicalTestRepository.findAll();
     }
 
     @Transactional(readOnly = true)
-    public TechnicalTest findById(Long id) {
+    public TechnicalTest findById(int id) {
         log.debug("Request to get Technical Test : {}", id);
-        return this.technicalTestRepository.findById(id).map(TechnicalTestService::map).orElse(null);
+        return this.technicalTestRepository.findById(id);
     }
 
     public TechnicalTest create(TechnicalTest t) {
         log.debug("Request to create Technical Test : {}", t);
 
-        return map(this.technicalTestRepository.save(
+        return this.technicalTestRepository.save(
                 new TechnicalTest(
                         t.getTechnicalTestId(),
-                        t.getTechnicalTestType(),
                         t.getTechnicalTestDescription(),
+                        t.getTechnicalTestType(),
                         t.getQuestions()
-                )));
+                ));
     }
 
     public void delete(Long id) {
@@ -63,17 +60,7 @@ public class TechnicalTestService {
         this.technicalTestRepository.deleteById(id);
     }
 
-    public static TechnicalTest map(TechnicalTest t) {
-        if (t != null) {
-            return new TechnicalTest(
-                        t.getTechnicalTestId(),
-                        t.getTechnicalTestType(),
-                        t.getTechnicalTestDescription(),
-                        t.getQuestions()
-            );
-        }
-        return null;
-    }
+
 
 }
 
