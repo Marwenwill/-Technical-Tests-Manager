@@ -98,6 +98,4 @@ private String description;
         return "Question{" + "questionId=" + questionId + ", question=" + question + ", description=" + description + '}';
     }
  
-    
 }
-    

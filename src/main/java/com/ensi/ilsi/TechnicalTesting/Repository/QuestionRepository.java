@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Repository;
+package com.ensi.ilsi.TechnicalTesting.Repository;
 
-import Entities.Question;
+import com.ensi.ilsi.TechnicalTesting.Domain.Question;
 import java.util.ArrayList;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -16,6 +16,7 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface QuestionRepository extends JpaRepository<Question, Long> {
-    public ArrayList<Question> findByQuestionId(Long id);
+    public Question findById(int id);
+    public Question deleteById(int id);
 }
 

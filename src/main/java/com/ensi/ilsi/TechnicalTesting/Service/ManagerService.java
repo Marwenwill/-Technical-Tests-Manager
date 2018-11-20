@@ -23,7 +23,7 @@ public class ManagerService {
     }
     
     public void testToCandidate(TechnicalTest t, Candidate c){
-        
+        c.getTestList().add(t);
     }
 }
 
