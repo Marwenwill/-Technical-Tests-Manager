@@ -9,5 +9,10 @@ public class CandidateWeb {
     public CandidateWeb(CandidateService CandidateService) {
         this.CandidateService = CandidateService;
     }
+    
+    @GetMapping
+    public List<TechnicalTest> ViewAffectedTest() {
+        return this.CandidateService.ViewAffectedTest();
+    }
 
 }
