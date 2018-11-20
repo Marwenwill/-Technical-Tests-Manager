@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Entities;
+package Domain;
 
 import java.util.Objects;
 import javax.persistence.*;
@@ -55,40 +55,4 @@ private String description;
     }
     
    
-    public Question(int newId,String newQuestion, String newDescription) {
-        this.questionId = newId;
-        this.question = newQuestion;
-        this.description = newDescription;
-    }
-
-    public Question() {
-        // New question
-    }
- 
-    
-    
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Question q = (Question) o;
-        return Objects.equals(question, q.question) &&
-               Objects.equals(description, q.description);
-    }
-
-    @Override
-    public String toString() {
-                return " Question{" +
-                "question ='" + question +  + '\'' +
-                ", description='" +  description +
-                '}';
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(question, description); 
-    }
-}
-
-
-
+    public 
