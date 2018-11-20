@@ -31,10 +31,12 @@ public Candidate()
 {/*wallah je suis un constructeur*/}
     
 public Candidate(int idCandidate, String firstName, String lastName)   
-{this.idCandidate = idCandidate;
- this.firstName = firstName;
- this.lastName = lastName;
- this.testList = testList;}
+{
+    this.idCandidate = idCandidate;
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.testList = testList;
+}
  
      public int getIdCandidate() {
         return idCandidate;
