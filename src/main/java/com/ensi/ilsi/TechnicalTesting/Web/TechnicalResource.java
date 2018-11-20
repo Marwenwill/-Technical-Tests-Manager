@@ -26,7 +26,7 @@ public class TechnicalResource {
 
     private final TechnicalTestService technicalTestService;
 
-    public TechnicalResource(TechnicalTestService productService) {
+    public TechnicalResource(TechnicalTestService technicalTestService) {
         this.technicalTestService = productService;
     }
 
