@@ -5,7 +5,7 @@
  */
 package Web;
 
-import Entities.TechnicalTest;
+import Domain.TechnicalTest;
 import Service.TechnicalTestService;
 import java.util.List;
 import org.springframework.web.bind.annotation.DeleteMapping;
