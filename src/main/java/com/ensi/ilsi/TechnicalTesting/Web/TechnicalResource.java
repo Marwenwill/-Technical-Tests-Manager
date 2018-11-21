@@ -1,19 +1,15 @@
-<<<<<<< HEAD
+
 package com.ensi.ilsi.TechnicalTesting.Web;
 
 import com.ensi.ilsi.TechnicalTesting.Domain.TechnicalTest;
 import com.ensi.ilsi.TechnicalTesting.Service.TechnicalTestService;
-=======
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Web;
 
-import Domain.TechnicalTest;
-import Service.TechnicalTestService;
->>>>>>> e54dbb6c2fa57a6fc4206cffd4787bda95651b4a
 import java.util.List;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,11 +30,7 @@ public class TechnicalResource {
     private final TechnicalTestService technicalTestService;
 
     public TechnicalResource(TechnicalTestService technicalTestService) {
-<<<<<<< HEAD
         this.technicalTestService = technicalTestService;
-=======
-        this.technicalTestService = productService;
->>>>>>> e54dbb6c2fa57a6fc4206cffd4787bda95651b4a
     }
 
     @GetMapping
@@ -47,11 +39,7 @@ public class TechnicalResource {
     }
 
     @GetMapping("/{id}")
-<<<<<<< HEAD
     public TechnicalTest findById(@PathVariable int id) {
-=======
-    public TechnicalTest findById(@PathVariable Long id) {
->>>>>>> e54dbb6c2fa57a6fc4206cffd4787bda95651b4a
         return this.technicalTestService.findById(id);
     }
 
@@ -65,8 +53,4 @@ public class TechnicalResource {
         this.technicalTestService.delete(id);
     }
     
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> e54dbb6c2fa57a6fc4206cffd4787bda95651b4a

@@ -5,15 +5,11 @@
  */
 package com.ensi.ilsi.TechnicalTesting.Service;
 
-<<<<<<< HEAD
 import com.ensi.ilsi.TechnicalTesting.Domain.TechnicalTest;
 import com.ensi.ilsi.TechnicalTesting.Repository.QuestionRepository;
 import com.ensi.ilsi.TechnicalTesting.Repository.TechnicalTestRepository;
-=======
-import Entities.TechnicalTest;
-import Repository.QuestionRepository;
-import Repository.TechnicalTestRepository;
->>>>>>> e54dbb6c2fa57a6fc4206cffd4787bda95651b4a
+
+
 import java.util.List;
 import java.util.stream.Collectors;
 import org.slf4j.Logger;
@@ -56,36 +52,16 @@ public class TechnicalTestService {
                 new TechnicalTest(
                         t.getTechnicalTestId(),
                         t.getTechnicalTestDescription(),
-<<<<<<< HEAD
                         t.getTechnicalTestType(),
                         t.getQuestions()
                 ));
-=======
-                        t.getQuestions().stream().map(QuestionService::map).collect(Collectors.toSet())
-                )));
->>>>>>> e54dbb6c2fa57a6fc4206cffd4787bda95651b4a
+                        
     }
 
     public void delete(Long id) {
         log.debug("Request to delete Technical Test : {}", id);
         this.technicalTestRepository.deleteById(id);
     }
-
-<<<<<<< HEAD
-
-=======
-    public static TechnicalTest map(TechnicalTest t) {
-        if (t != null) {
-            return new TechnicalTest(
-                        t.getTechnicalTestId(),
-                        t.getTechnicalTestType(),
-                        t.getTechnicalTestDescription(),
-                        t.getQuestions().stream().map(QuestionService::map).collect(Collectors.toSet())
-            );
-        }
-        return null;
-    }
->>>>>>> e54dbb6c2fa57a6fc4206cffd4787bda95651b4a
 
 }
 
