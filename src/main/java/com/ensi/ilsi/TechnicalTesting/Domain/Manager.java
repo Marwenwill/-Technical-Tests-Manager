@@ -14,27 +14,37 @@ import javax.persistence.*;
  * @author Toshiba-PC
  */
 @Entity
+@Table(name = "manager")
 public class Manager {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int idManger;
     
+    @Column(name = "firstName")
     private String firstName;
     
+    @Column(name = "lastName")
     private String lastName;
     
+    
+    @Column(name = "telephone")
+    private String telephone;
+    
+    @OneToMany
     private Set<Candidate> candidatesList;
     
+    @OneToMany
     private Set<TechnicalTest> TestList;
 
     public Manager() {
+        // JPA
     }
 
-    public Manager(int idManger, String firstName, String lastName, Set<Candidate> candidatesList, Set<TechnicalTest> TestList) {
-        this.idManger = idManger;
+    public Manager(String firstName, String lastName, String telephone, Set<Candidate> candidatesList, Set<TechnicalTest> TestList) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.telephone = telephone;
         this.candidatesList = candidatesList;
         this.TestList = TestList;
     }
@@ -63,6 +73,14 @@ public class Manager {
         this.lastName = lastName;
     }
 
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
+
     public Set<Candidate> getCandidatesList() {
         return candidatesList;
     }
@@ -81,12 +99,7 @@ public class Manager {
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 97 * hash + this.idManger;
-        hash = 97 * hash + Objects.hashCode(this.firstName);
-        hash = 97 * hash + Objects.hashCode(this.lastName);
-        hash = 97 * hash + Objects.hashCode(this.candidatesList);
-        hash = 97 * hash + Objects.hashCode(this.TestList);
+        int hash = 7;
         return hash;
     }
 
@@ -108,6 +121,9 @@ public class Manager {
         if (!Objects.equals(this.lastName, other.lastName)) {
             return false;
         }
+        if (!Objects.equals(this.telephone, other.telephone)) {
+            return false;
+        }
         if (!Objects.equals(this.candidatesList, other.candidatesList)) {
             return false;
         }
@@ -119,8 +135,10 @@ public class Manager {
 
     @Override
     public String toString() {
-        return "Manager{" + "idManger=" + idManger + ", firstName=" + firstName + ", lastName=" + lastName + ", candidatesList=" + candidatesList + ", TestList=" + TestList + '}';
+        return "Manager{" + "idManger=" + idManger + ", firstName=" + firstName + ", lastName=" + lastName + ", telephone=" + telephone + ", candidatesList=" + candidatesList + ", TestList=" + TestList + '}';
     }
+    
+    
     
     
 }

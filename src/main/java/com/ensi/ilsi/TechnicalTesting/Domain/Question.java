@@ -14,23 +14,25 @@ import javax.validation.constraints.*;
  * @author hajer
  */
 @Entity
-@Table(name = "Question")
+@Table(name = "question")
 public class Question {
  
-@Id
-@NotNull
-@GeneratedValue(strategy = GenerationType.AUTO)
-@Column(name = "id", nullable = false)
-private int questionId;
+    @Id
+    @NotNull
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
+    private int questionId;
 
-@NotNull
-@Column(name = "question", nullable = false)
-private String question; 
-@NotNull
-@Column(name = "description", nullable = false)
-private String description; 
+    @NotNull
+    @Column(name = "question")
+    private String question; 
+
+    @NotNull
+    @Column(name = "description")
+    private String description; 
 
     public int getQuestionId() {
+
         return questionId;
     }
 
@@ -57,8 +59,7 @@ private String description;
     public Question() {
     }
 
-    public Question(int questionId, String question, String description) {
-        this.questionId = questionId;
+    public Question(String question, String description) {
         this.question = question;
         this.description = description;
     }

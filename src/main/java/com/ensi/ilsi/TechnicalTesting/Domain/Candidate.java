@@ -6,39 +6,50 @@ package com.ensi.ilsi.TechnicalTesting.Domain;
 
 import java.util.Objects;
 import java.util.Set;
+import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 /**
  *
  * @author ASUS-PC
  */
+@Entity
+@Table(name = "candidate")
 public class Candidate {
-@Id
-@GeneratedValue(strategy = GenerationType.AUTO)
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int idCandidate;
+    
+    @Column(name = "firstName")
+    private String firstName;
+    
+    @Column(name = "lastName")
+    private String lastName;
+    
+    @Column(name = "telephone")
+    private String telephone;
+    
+    @OneToMany
+    private Set<TechnicalTest> testList;
 
+    public Candidate() {
+        // JPA
+    }
 
-private int idCandidate;
-private String firstName;
-private String lastName;
-@OneToMany
-private Set<TechnicalTest> testList;
-    
-    
-public Candidate()
-{/*wallah je suis un constructeur*/}
-    
-public Candidate(int idCandidate, String firstName, String lastName)   
-{
-    this.idCandidate = idCandidate;
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.testList = testList;
-}
- 
-     public int getIdCandidate() {
+    public Candidate(String firstName, String lastName, String telephone, Set<TechnicalTest> testList) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.telephone = telephone;
+        this.testList = testList;
+    }
+
+    public int getIdCandidate() {
         return idCandidate;
     }
 
@@ -61,26 +72,29 @@ public Candidate(int idCandidate, String firstName, String lastName)
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
+
     public Set<TechnicalTest> getTestList() {
         return testList;
     }
 
-    public void setTestList(Set<TechnicalTest> TestList) {
-        this.testList = TestList;
+    public void setTestList(Set<TechnicalTest> testList) {
+        this.testList = testList;
     }
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 37 * hash + this.idCandidate;
-        hash = 37 * hash + Objects.hashCode(this.firstName);
-        hash = 37 * hash + Objects.hashCode(this.lastName);
-        hash = 37 * hash + Objects.hashCode(this.testList);
+        int hash = 7;
         return hash;
     }
-   
-   
-    
+
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {
@@ -99,7 +113,9 @@ public Candidate(int idCandidate, String firstName, String lastName)
         if (!Objects.equals(this.lastName, other.lastName)) {
             return false;
         }
-       
+        if (!Objects.equals(this.telephone, other.telephone)) {
+            return false;
+        }
         if (!Objects.equals(this.testList, other.testList)) {
             return false;
         }
@@ -108,8 +124,13 @@ public Candidate(int idCandidate, String firstName, String lastName)
 
     @Override
     public String toString() {
-        return "Candidate{" + "idCandidate=" + idCandidate + ", firstName=" + firstName + ", lastName=" + lastName + ",TestList=" + testList + '}';
+        return "Candidate{" + "idCandidate=" + idCandidate + ", firstName=" + firstName + ", lastName=" + lastName + ", telephone=" + telephone + ", testList=" + testList + '}';
     }
+    
+    
+    
+    
+
     
     
     

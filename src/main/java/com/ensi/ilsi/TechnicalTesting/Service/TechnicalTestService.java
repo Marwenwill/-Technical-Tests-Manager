@@ -50,7 +50,6 @@ public class TechnicalTestService {
 
         return this.technicalTestRepository.save(
                 new TechnicalTest(
-                        t.getTechnicalTestId(),
                         t.getTechnicalTestDescription(),
                         t.getTechnicalTestType(),
                         t.getQuestions()

@@ -34,6 +34,12 @@ public class TechnicalTest {
     @NotNull
     @Column(name = "type", nullable = false)
     private TestType technicalTestType;
+    
+    
+    @NotNull
+    @OneToMany
+    private ArrayList<Question> questions;
+    
 
     public int getTechnicalTestId() {
         return technicalTestId;
@@ -72,8 +78,7 @@ public class TechnicalTest {
     }
 
 
-    public TechnicalTest(int technicalTestId, String technicalTestDescription, TestType technicalTestType, ArrayList<Question> questions) {
-        this.technicalTestId = technicalTestId;
+    public TechnicalTest(String technicalTestDescription, TestType technicalTestType, ArrayList<Question> questions) {
         this.technicalTestDescription = technicalTestDescription;
         this.technicalTestType = technicalTestType;
         this.questions = questions;
@@ -82,10 +87,6 @@ public class TechnicalTest {
     public enum TestType {
     Python, Java, C, SQL
 }
-
-    @NotNull
-    @OneToMany
-    private ArrayList<Question> questions;
     
     @Override
     public String toString() {

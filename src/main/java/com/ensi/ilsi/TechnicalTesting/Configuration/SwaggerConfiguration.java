@@ -3,12 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Configuration;
+package com.ensi.ilsi.TechnicalTesting.Configuration;
 
-/**
- *
- * @author hajer
- */
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.PathSelectors;
@@ -18,17 +14,17 @@ import springfox.documentation.spring.web.plugins.Docket;
 
 /**
  *
- * @author hajer
+ * @author n.lamouchi
  */
-
 @Configuration
 public class SwaggerConfiguration {
-        @Bean
-    public Docket TechnichalTestingApi() {
+
+    @Bean
+    public Docket productApi() {
         return new Docket(DocumentationType.SWAGGER_2).select()
                 .apis(RequestHandlerSelectors.any())
                 .paths(PathSelectors.any())
-                .apis(RequestHandlerSelectors.basePackage("com.ensi.ilsi"))
+                .apis(RequestHandlerSelectors.basePackage("com.targa.labs"))
                 .build();
     }
 }

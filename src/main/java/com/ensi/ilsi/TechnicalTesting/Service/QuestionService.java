@@ -31,7 +31,6 @@ public class QuestionService {
         log.debug("Request to create Question : {}", q);
         return this.questionRepository.save(
                 new Question(
-                    q.getQuestionId(),
                     q.getQuestion(),
                     q.getDescription()
                 ));
