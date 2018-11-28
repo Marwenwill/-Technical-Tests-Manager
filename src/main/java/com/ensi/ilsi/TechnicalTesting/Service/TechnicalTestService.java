@@ -57,7 +57,7 @@ public class TechnicalTestService {
                         
     }
 
-    public void delete(Long id) {
+    public void delete(int id) {
         log.debug("Request to delete Technical Test : {}", id);
         this.technicalTestRepository.deleteById(id);
     }

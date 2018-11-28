@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Toshiba-PC
  */
 @RestController
-@RequestMapping("/customers")
+@RequestMapping("/candidates")
 public class CandidateRessource {
 
     private final CandidateService candidateService;

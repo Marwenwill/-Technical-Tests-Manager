@@ -49,7 +49,7 @@ public class TechnicalResource {
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) {
+    public void delete(@PathVariable int id) {
         this.technicalTestService.delete(id);
     }
     

@@ -29,7 +29,11 @@ public class Question {
 
     @NotNull
     @Column(name = "description")
-    private String description; 
+    private String description;
+
+    @NotNull
+    @ManyToOne
+    private TechnicalTest technicalTest;
 
     public int getQuestionId() {
 

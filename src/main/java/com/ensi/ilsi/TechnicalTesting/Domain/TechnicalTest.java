@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Objects;
+import java.util.Set;
 
 
 /**
@@ -37,8 +38,8 @@ public class TechnicalTest {
     
     
     @NotNull
-    @OneToMany
-    private ArrayList<Question> questions;
+    @OneToMany(mappedBy = "technicalTest")
+    private Set<Question> questions;
     
 
     public int getTechnicalTestId() {
@@ -65,11 +66,11 @@ public class TechnicalTest {
         this.technicalTestType = technicalTestType;
     }
 
-    public ArrayList<Question> getQuestions() {
+    public Set<Question> getQuestions() {
         return questions;
     }
 
-    public void setQuestions(ArrayList<Question> questions) {
+    public void setQuestions(Set<Question> questions) {
         this.questions = questions;
     }
     
@@ -78,7 +79,7 @@ public class TechnicalTest {
     }
 
 
-    public TechnicalTest(String technicalTestDescription, TestType technicalTestType, ArrayList<Question> questions) {
+    public TechnicalTest(String technicalTestDescription, TestType technicalTestType, Set<Question> questions) {
         this.technicalTestDescription = technicalTestDescription;
         this.technicalTestType = technicalTestType;
         this.questions = questions;

@@ -15,7 +15,7 @@ import org.springframework.stereotype.Repository;
  * @author hajer
  */
 @Repository
-public interface QuestionRepository extends JpaRepository<Question, Long> {
+public interface QuestionRepository extends JpaRepository<Question, Integer> {
     public Question findById(int id);
     public Question deleteById(int id);
 }
