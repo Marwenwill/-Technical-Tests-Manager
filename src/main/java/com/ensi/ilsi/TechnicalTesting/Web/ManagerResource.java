@@ -10,9 +10,7 @@ import com.ensi.ilsi.TechnicalTesting.Service.CandidateService;
 import com.ensi.ilsi.TechnicalTesting.Service.ManagerService;
 import com.ensi.ilsi.TechnicalTesting.Web.dto.CandidateDto;
 import com.ensi.ilsi.TechnicalTesting.Web.dto.ManagerDto;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,6 +18,8 @@ import java.util.List;
  *
  * @author Toshiba-PC
  */
+@RestController
+@RequestMapping("/managers")
 public class ManagerResource {
 
     private final ManagerService managerService;
